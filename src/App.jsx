@@ -9,7 +9,7 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Wishlist from './pages/Wishlist'
 import Register from './pages/Register'
-import Footer from './components/footer'
+import Footer from '../components/Footer'
 
 function App() {
   return (
