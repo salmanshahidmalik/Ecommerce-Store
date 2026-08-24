@@ -77,7 +77,7 @@ const products = [
   {
     id: 6,
     name: "Bluetooth Speaker",
-    images: ["https://images.unsplash.com/photo-1608043152269-423dbba4e7e2?w=500&q=80"],
+    images:"https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=500&q=80",
     price: 49.99,
     discount: 15,
     category: "Electronics",
@@ -167,7 +167,7 @@ const products = [
   {
     id: 12,
     name: "Power Bank",
-    images: ["https://images.unsplash.com/photo-1609592424846-7b1f9f7c0f8e?w=500&q=80"],
+    images: ["https://images.unsplash.com/photo-1566554738544-d962991c3fee?w=640"],
     price: 34.99,
     discount: 12,
     category: "Accessories",
