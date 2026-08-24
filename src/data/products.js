@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     name: "Wireless Headphones",
-    images: ["https://placehold.co/400x400?text=Headphones"],
+    images: ["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"],
     price: 59.99,
     discount: 10,
     category: "Electronics",
@@ -17,7 +17,7 @@ const products = [
   {
     id: 2,
     name: "Smart Watch",
-    images: ["https://placehold.co/400x400?text=Smart+Watch"],
+    images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"],
     price: 89.99,
     discount: 15,
     category: "Wearables",
@@ -32,7 +32,7 @@ const products = [
   {
     id: 3,
     name: "Laptop",
-    images: ["https://placehold.co/400x400?text=Laptop"],
+    images: ["https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80"],
     price: 799.99,
     discount: 8,
     category: "Computers",
@@ -47,7 +47,7 @@ const products = [
   {
     id: 4,
     name: "Gaming Mouse",
-    images: ["https://placehold.co/400x400?text=Gaming+Mouse"],
+    images: ["https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80"],
     price: 39.99,
     discount: 12,
     category: "Gaming",
@@ -62,7 +62,7 @@ const products = [
   {
     id: 5,
     name: "Mechanical Keyboard",
-    images: ["https://placehold.co/400x400?text=Keyboard"],
+    images: ["https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80"],
     price: 74.99,
     discount: 10,
     category: "Gaming",
@@ -77,7 +77,7 @@ const products = [
   {
     id: 6,
     name: "Bluetooth Speaker",
-    images: ["https://placehold.co/400x400?text=Bluetooth+Speaker"],
+    images: ["https://images.unsplash.com/photo-1608043152269-423dbba4e7e2?w=500&q=80"],
     price: 49.99,
     discount: 15,
     category: "Electronics",
@@ -92,7 +92,7 @@ const products = [
   {
     id: 7,
     name: "Tablet",
-    images: ["https://placehold.co/400x400?text=Tablet"],
+    images: ["https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80"],
     price: 249.99,
     discount: 12,
     category: "Computers",
@@ -107,7 +107,7 @@ const products = [
   {
     id: 8,
     name: "USB-C Hub",
-    images: ["https://placehold.co/400x400?text=USB-C+Hub"],
+    images: ["https://images.unsplash.com/photo-1625842268584-8f3296236761?w=500&q=80"],
     price: 29.99,
     discount: 8,
     category: "Accessories",
@@ -122,7 +122,7 @@ const products = [
   {
     id: 9,
     name: "Wireless Keyboard",
-    images: ["https://placehold.co/400x400?text=Wireless+Keyboard"],
+    images: ["https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80"],
     price: 44.99,
     discount: 10,
     category: "Accessories",
@@ -137,7 +137,7 @@ const products = [
   {
     id: 10,
     name: "Gaming Headset",
-    images: ["https://placehold.co/400x400?text=Gaming+Headset"],
+    images: ["https://images.unsplash.com/photo-1599669454699-248893623440?w=500&q=80"],
     price: 69.99,
     discount: 18,
     category: "Gaming",
@@ -152,7 +152,7 @@ const products = [
   {
     id: 11,
     name: "Smartphone",
-    images: ["https://placehold.co/400x400?text=Smartphone"],
+    images: ["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80"],
     price: 499.99,
     discount: 10,
     category: "Mobile",
@@ -167,7 +167,7 @@ const products = [
   {
     id: 12,
     name: "Power Bank",
-    images: ["https://placehold.co/400x400?text=Power+Bank"],
+    images: ["https://images.unsplash.com/photo-1609592424846-7b1f9f7c0f8e?w=500&q=80"],
     price: 34.99,
     discount: 12,
     category: "Accessories",
@@ -182,7 +182,7 @@ const products = [
   {
     id: 13,
     name: "Wireless Earbuds",
-    images: ["https://placehold.co/400x400?text=Wireless+Earbuds"],
+    images: ["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&q=80"],
     price: 54.99,
     discount: 15,
     category: "Audio",
@@ -197,7 +197,7 @@ const products = [
   {
     id: 14,
     name: "4K Monitor",
-    images: ["https://placehold.co/400x400?text=4K+Monitor"],
+    images: ["https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&q=80"],
     price: 329.99,
     discount: 9,
     category: "Computers",
@@ -212,7 +212,7 @@ const products = [
   {
     id: 15,
     name: "Webcam",
-    images: ["https://placehold.co/400x400?text=Webcam"],
+    images: ["https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500&q=80"],
     price: 64.99,
     discount: 11,
     category: "Accessories",
@@ -227,7 +227,7 @@ const products = [
   {
     id: 16,
     name: "Gaming Chair",
-    images: ["https://placehold.co/400x400?text=Gaming+Chair"],
+    images: ["https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500&q=80"],
     price: 179.99,
     discount: 20,
     category: "Gaming",
@@ -242,7 +242,7 @@ const products = [
   {
     id: 17,
     name: "External SSD",
-    images: ["https://placehold.co/400x400?text=External+SSD"],
+    images: ["https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=500&q=80"],
     price: 119.99,
     discount: 13,
     category: "Storage",
@@ -257,7 +257,7 @@ const products = [
   {
     id: 18,
     name: "Smart TV",
-    images: ["https://placehold.co/400x400?text=Smart+TV"],
+    images: ["https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500&q=80"],
     price: 599.99,
     discount: 15,
     category: "Entertainment",
@@ -272,7 +272,7 @@ const products = [
   {
     id: 19,
     name: "Digital Camera",
-    images: ["https://placehold.co/400x400?text=Digital+Camera"],
+    images: ["https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&q=80"],
     price: 449.99,
     discount: 10,
     category: "Cameras",
@@ -287,7 +287,7 @@ const products = [
   {
     id: 20,
     name: "Smart LED Bulb",
-    images: ["https://placehold.co/400x400?text=Smart+LED+Bulb"],
+    images: ["https://images.unsplash.com/photo-1509391366360-2e959784a276?w=500&q=80"],
     price: 19.99,
     discount: 5,
     category: "Smart Home",

@@ -145,7 +145,7 @@ function Home() {
 
                 <figure className="relative p-4">
 
-                  <div className="badge badge-error absolute left-4 top-4 text-white">
+                  <div className="badge badge-success absolute left-4 top-4 text-white">
                     {product.discount}% OFF
                   </div>
 
@@ -179,7 +179,7 @@ function Home() {
 
                     <Link
                       to={`/products/${product.id}`}
-                      className="btn btn-primary btn-sm w-full"
+                      className="btn btn-secondary btn-sm w-full"
                     >
                       View Product
                     </Link>
