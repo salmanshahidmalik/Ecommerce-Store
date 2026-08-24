@@ -1,4 +1,4 @@
-```jsx
+
 function Footer() {
   return (
     <footer className="bg-neutral text-neutral-content">
@@ -124,4 +124,3 @@ function Footer() {
 }
 
 export default Footer;
-```
