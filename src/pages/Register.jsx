@@ -28,6 +28,19 @@ function Register() {
 
             <div>
               <label className="label">
+                <span className="label-text">Phone</span>
+              </label>
+
+              <input
+                type="number"
+                placeholder="Enter your 03XX-XXXXXXX"
+                className="input input-bordered w-full"
+              />
+            </div>
+
+
+            <div>
+              <label className="label">
                 <span className="label-text">Email</span>
               </label>
 
