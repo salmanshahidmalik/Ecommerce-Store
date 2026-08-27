@@ -21,22 +21,22 @@ function Register() {
     setPasswordError("");
     setCPasswordError("");
 
-    if (!FullnameError) {
+    if (!Fullname) {
       FullnameError("Please enter your Name Correct!!!.");
-    } if (!PhoneNUMError) {
+    } if (!PhoneNUM) {
       setPhoneNUMError("Please enter your email Correct!!!.");
     } if (!CpasswordError) {
       setCPasswordError("Please enter your email.");
     }
-      if (!email) {
+      if (!Email) {
       setEmailError("Please enter your email.");
     }
   
-    if (!password) {
+    if (!Password) {
       setPasswordError("Please enter your password.");
     }
   
-    if (email && password) {
+    if (Email && Password) {
       setloginsuccess("Login Successful !!!")
     }
   };
