@@ -60,6 +60,11 @@ const handleLogin = (e) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
+              {emailError && (
+              <p className="text-error text-sm mt-1">
+                {emailError}
+              </p>
+            )}
 
           </fieldset>
 
