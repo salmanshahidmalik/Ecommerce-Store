@@ -6,6 +6,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
 const [passwordError, setPasswordError] = useState("");
+const [loginsuccess, setloginsuccess] = useState("");
 
 const handleLogin = (e) => {
   e.preventDefault();
@@ -23,6 +24,7 @@ const handleLogin = (e) => {
 
   if (email && password) {
     alert("Login successful!");
+    setloginsuccess("Login Successful !!!")
   }
 };
   return (
@@ -86,6 +88,11 @@ const handleLogin = (e) => {
             {passwordError && (
               <p className="text-error text-sm mt-1">
                 {passwordError}
+              </p>
+            )}
+              {loginsuccess && (
+              <p className="text-success text-sm mt-1">
+                {loginsuccess}
               </p>
             )}
 
