@@ -1,7 +1,25 @@
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+  
+    if (!email) {
+      alert("Please enter your email.");
+      return;
+    }
+  
+    if (!password) {
+      alert("Please enter your password.");
+      return;
+    }
+  
+    alert("Login successful!");
+  };
   return (
     <div className="flex min-h-[75vh] items-center justify-center bg-base-200 px-6 py-12">
 
@@ -31,9 +49,11 @@ function Login() {
             </legend>
 
             <input
-              type="email"
-              className="input w-full"
-              placeholder="Enter your email"
+            type="email"
+            className="input w-full"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             />
 
           </fieldset>
@@ -50,6 +70,8 @@ function Login() {
               type="password"
               className="input w-full"
               placeholder="Enter your password"
+              value ={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
 
           </fieldset>
@@ -82,7 +104,7 @@ function Login() {
 
 
           {/* Login Button */}
-          <button className="btn btn-primary mt-6 w-full">
+          <button className="btn btn-primary mt-6 w-full" onClick={handleLogin}>
             Login
           </button>
 
