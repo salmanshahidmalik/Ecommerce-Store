@@ -1,4 +1,4 @@
-```jsx
+
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -122,4 +122,3 @@ function Login() {
 }
 
 export default Login;
-```
