@@ -33,7 +33,7 @@ function Register() {
 
               <input
                 type="tel"
-                placeholder="Enter your 03XX-XXXXXXX"
+                placeholder="03XX-XXXXXXX"
                 className="input input-bordered w-full"
               />
             </div>

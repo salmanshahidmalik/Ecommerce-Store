@@ -33,6 +33,8 @@ function App() {
 
         <Route path="/cart" element={<Cart />} />
 
+        <Route path="/orderconfirmation" element={<OrderConfirmation />} />
+
         <Route path="/login" element={<Login />} />
 
         <Route path="/wishlist" element={<Wishlist />} />
