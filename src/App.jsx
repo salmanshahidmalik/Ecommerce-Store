@@ -10,7 +10,6 @@ import Login from './pages/Login'
 import Wishlist from './pages/Wishlist'
 import Register from './pages/Register'
 import Footer from './components/Footer'
-import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
