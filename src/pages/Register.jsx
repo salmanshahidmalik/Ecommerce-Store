@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 function Register() {
   return (
@@ -80,5 +80,4 @@ function Register() {
     </div>
   );
 }
-
 export default Register;
