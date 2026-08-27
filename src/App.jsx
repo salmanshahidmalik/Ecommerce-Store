@@ -10,6 +10,12 @@ import Login from './pages/Login'
 import Wishlist from './pages/Wishlist'
 import Register from './pages/Register'
 import Footer from './components/Footer'
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import Checkout from "./pages/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation";
+import Orders from "./pages/Orders";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -33,6 +39,17 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
 
         <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route path="/checkout" element={<Checkout />} />
+
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+
+        <Route path="/orders" element={<Orders />} />
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
 
