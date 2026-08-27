@@ -38,7 +38,6 @@ function App() {
 
         <Route path="/wishlist" element={<Wishlist />} />
 
-
         <Route path="/register" element={<Register />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
