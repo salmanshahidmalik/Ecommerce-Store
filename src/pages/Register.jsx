@@ -32,7 +32,7 @@ function Register() {
               </label>
 
               <input
-                type="number"
+                type="tel"
                 placeholder="Enter your 03XX-XXXXXXX"
                 className="input input-bordered w-full"
               />
