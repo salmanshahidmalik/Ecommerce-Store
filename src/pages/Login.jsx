@@ -5,8 +5,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
-const [passwordError, setPasswordError] = useState("");
-const [loginsuccess, setloginsuccess] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [loginsuccess, setloginsuccess] = useState("");
 
 const handleLogin = (e) => {
   e.preventDefault();
@@ -23,7 +23,6 @@ const handleLogin = (e) => {
   }
 
   if (email && password) {
-    alert("Login successful!");
     setloginsuccess("Login Successful !!!")
   }
 };

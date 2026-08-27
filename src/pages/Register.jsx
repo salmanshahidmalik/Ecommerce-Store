@@ -1,6 +1,49 @@
 import { Link } from "react-router-dom"; 
-
+import { useState } from "react";
 function Register() {
+  const [Fullname, setFullname] = useState("");
+  const [PhoneNUM, setPhoneNUM] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+
+  const [FullnameError, setFullnameError] = useState("");
+  const [PhoneNUMError, setPhoneNUMError] = useState("");
+      const [Emailerror, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [CpasswordError, setCPasswordError] = useState("");
+
+  const handleREG = (e) => {
+    e.preventDefault();
+  
+    setFullnameError("");
+    setPhoneNUMError("");
+    setEmailError("");
+    setPasswordError("");
+    setCPasswordError("");
+
+    if (!FullnameError) {
+      FullnameError("Please enter your Name Correct!!!.");
+    } if (!PhoneNUMError) {
+      setPhoneNUMError("Please enter your email Correct!!!.");
+    } if (!CpasswordError) {
+      setCPasswordError("Please enter your email.");
+    }
+      if (!email) {
+      setEmailError("Please enter your email.");
+    }
+  
+    if (!password) {
+      setPasswordError("Please enter your password.");
+    }
+  
+    if (email && password) {
+      setloginsuccess("Login Successful !!!")
+    }
+  };
+
+
+
+
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-10">
       <div className="card w-full max-w-md bg-base-100 shadow-xl">
@@ -23,7 +66,14 @@ function Register() {
                 type="text"
                 placeholder="Enter your name"
                 className="input input-bordered w-full"
+                value={Fullname}
+                onChange={(e) => setFullname(e.target.value)}
               />
+              {FullnameError &&(
+                <p className="text-error text-sm mt-1">
+                  {FullnameError}
+                </p>
+              )}
             </div>
 
             <div>
@@ -35,6 +85,8 @@ function Register() {
                 type="tel"
                 placeholder="03XX-XXXXXXX"
                 className="input input-bordered w-full"
+                value={PhoneNUM}
+                onChange={(e) => setPhoneNUM(e.target.value)}
               />
             </div>
 
@@ -48,6 +100,8 @@ function Register() {
                 type="email"
                 placeholder="Enter your email"
                 className="input input-bordered w-full"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -60,6 +114,8 @@ function Register() {
                 type="password"
                 placeholder="Enter password"
                 className="input input-bordered w-full"
+                value={Password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
