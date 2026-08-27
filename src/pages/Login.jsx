@@ -83,6 +83,11 @@ const handleLogin = (e) => {
               value ={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {passwordError && (
+              <p className="text-error text-sm mt-1">
+                {passwordError}
+              </p>
+            )}
 
           </fieldset>
 
