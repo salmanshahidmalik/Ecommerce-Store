@@ -4,22 +4,27 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+const [passwordError, setPasswordError] = useState("");
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-  
-    if (!email) {
-      alert("Please enter your email.");
-      return;
-    }
-  
-    if (!password) {
-      alert("Please enter your password.");
-      return;
-    }
-  
+const handleLogin = (e) => {
+  e.preventDefault();
+
+  setEmailError("");
+  setPasswordError("");
+
+  if (!email) {
+    setEmailError("Please enter your email.");
+  }
+
+  if (!password) {
+    setPasswordError("Please enter your password.");
+  }
+
+  if (email && password) {
     alert("Login successful!");
-  };
+  }
+};
   return (
     <div className="flex min-h-[75vh] items-center justify-center bg-base-200 px-6 py-12">
 
