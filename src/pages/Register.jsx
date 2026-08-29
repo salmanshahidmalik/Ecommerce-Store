@@ -32,7 +32,7 @@ function Register() {
       setEmailError("Please Enter Your Email");
     }if (!Password) {
       setPasswordError("Please Please Enter Your Password.");
-    }if (Email && Password && PhoneNUM && Fullname    ) {
+    }if (Email && Password && PhoneNUM && Fullname && CPassword   ) {
       setloginsuccess("Registration Successful !!!")
     }
   };
