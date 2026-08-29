@@ -143,11 +143,7 @@ function Register() {
                 value={CPassword}
                 onChange={(e) => setCPassword(e.target.value) }
               />
-              {CpasswordError &&(
-                <p className="text-error text-sm mt-1">
-                  {CpasswordError}
-                </p>
-              )}
+
               {setloginsuccess &&(
                 <p className="text-success text-sm mt-1">
                   {setloginsuccess}
