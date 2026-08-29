@@ -27,6 +27,7 @@ const handleLogin = (e) => {
   }
 };
   return (
+    <form className="space-y-4"onSubmit={handleLogin}>
     <div className="flex min-h-[75vh] items-center justify-center bg-base-200 px-6 py-12">
 
       <div className="card w-full max-w-md bg-base-100 shadow-xl">
@@ -125,7 +126,7 @@ const handleLogin = (e) => {
 
 
           {/* Login Button */}
-          <button className="btn btn-primary mt-6 w-full" onClick={handleLogin}>
+          <button className="btn btn-primary mt-6 w-full">
             Login
           </button>
 
@@ -161,7 +162,9 @@ const handleLogin = (e) => {
       </div>
 
     </div>
+    </form>
   );
 }
+
 
 export default Login;
