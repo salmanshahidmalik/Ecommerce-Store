@@ -5,6 +5,7 @@ function Register() {
   const [PhoneNUM, setPhoneNUM] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
+  const [CPassword, setCPassword] = useState("");
 
   const [FullnameError, setFullnameError] = useState("");
   const [PhoneNUMError, setPhoneNUMError] = useState("");
@@ -22,15 +23,15 @@ function Register() {
     setCPasswordError("");
 
     if (!Fullname) {
-      setFullnameError("Please enter your Name Correct!!!.");
+      setFullnameError("Please Enter Your Name");
     } if (!PhoneNUM) {
-      setPhoneNUMError("Please enter your email Correct!!!.");
+      setPhoneNUMError("Please Enter Your Phone Number");
     } if (!CpasswordError) {
-      setCPasswordError("Please enter your email.");
+      setCPasswordError("Please Enter Your Password Again.");
     }if (!Email) {
-      setEmailError("Please enter your email.");
+      setEmailError("Please Enter Your Email");
     }if (!Password) {
-      setPasswordError("Please enter your password.");
+      setPasswordError("Please Please Enter Your Password.");
     }if (Email && Password && PhoneNUM && Fullname    ) {
       setloginsuccess("Registration Successful !!!")
     }
@@ -103,6 +104,11 @@ function Register() {
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+                            {Emailerror &&(
+                <p className="text-error text-sm mt-1">
+                  {Emailerror}
+                </p>
+              )}
             </div>
 
             <div>
@@ -117,6 +123,11 @@ function Register() {
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {passwordError &&(
+                <p className="text-error text-sm mt-1">
+                  {passwordError}
+                </p>
+              )}
             </div>
 
             <div>
@@ -128,7 +139,14 @@ function Register() {
                 type="password"
                 placeholder="Confirm password"
                 className="input input-bordered w-full"
+                value={CPassword}
+                onChange={(e) => setCPassword(e.target.value) }
               />
+              {CpasswordError &&(
+                <p className="text-error text-sm mt-1">
+                  {CpasswordError}
+                </p>
+              )}
             </div>
 
             <button type="submit" className="btn btn-primary w-full"onClick={handleREG}>
