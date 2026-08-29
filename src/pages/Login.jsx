@@ -26,8 +26,9 @@ const handleLogin = (e) => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (email === user.Email && password === user.Password){
       setloginsuccess("Login Successful")
-  
-
+    }
+    else{
+      setPasswordError("Wrong Credientials")
     }
   }
 };
