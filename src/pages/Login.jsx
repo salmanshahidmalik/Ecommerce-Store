@@ -23,7 +23,7 @@ const handleLogin = (e) => {
   }
 
   if (email && password) {
-    const user = {
+    const users = {
       Email: email,
       Password: password
     }
