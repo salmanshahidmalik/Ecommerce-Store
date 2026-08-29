@@ -144,9 +144,9 @@ function Register() {
                 onChange={(e) => setCPassword(e.target.value) }
               />
 
-              {setloginsuccess &&(
+              {loginsuccess &&(
                 <p className="text-success text-sm mt-1">
-                  {setloginsuccess}
+                  {loginsuccess}
                 </p>
               )}
 
