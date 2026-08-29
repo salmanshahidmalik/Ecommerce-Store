@@ -6,6 +6,7 @@ function Register() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [CPassword, setCPassword] = useState("");
+  const [loginsuccess, setloginsuccess] = useState("")
 
   const [FullnameError, setFullnameError] = useState("");
   const [PhoneNUMError, setPhoneNUMError] = useState("");
@@ -139,7 +140,20 @@ function Register() {
                 type="password"
                 placeholder="Confirm password"
                 className="input input-bordered w-full"
-/>
+                value={CPassword}
+                onChange={(e) => setCPassword(e.target.value) }
+              />
+              {CpasswordError &&(
+                <p className="text-error text-sm mt-1">
+                  {CpasswordError}
+                </p>
+              )}
+              {setloginsuccess &&(
+                <p className="text-success text-sm mt-1">
+                  {setloginsuccess}
+                </p>
+              )}
+
             </div>
 
             <button type="submit" className="btn btn-primary w-full"onClick={handleREG}>
