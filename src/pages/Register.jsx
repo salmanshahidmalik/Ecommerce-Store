@@ -43,10 +43,10 @@ function Register() {
       Password === CPassword
     ) {
       const user = {
-        "Fullname": "value from Fullname",
-        "PhoneNUM": "value from PhoneNUM",
-        "Email": "value from Email",
-        "Password": "value from Password"
+        Fullname: Fullname,
+        PhoneNUM: PhoneNUM,
+        Email: Email,
+        Password: Password
       }
       localStorage.setItem("user", JSON.stringify(user));
       setloginsuccess("Registration Successful !!!");
