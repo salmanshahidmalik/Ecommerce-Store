@@ -22,7 +22,7 @@ function Register() {
     setCPasswordError("");
 
     if (!Fullname) {
-      FullnameError("Please enter your Name Correct!!!.");
+      setFullnameError("Please enter your Name Correct!!!.");
     } if (!PhoneNUM) {
       setPhoneNUMError("Please enter your email Correct!!!.");
     } if (!CpasswordError) {
@@ -37,7 +37,7 @@ function Register() {
     }
   
     if (Email && Password) {
-      setloginsuccess("Login Successful !!!")
+      setloginsuccess("Registration Successful !!!")
     }
   };
 
