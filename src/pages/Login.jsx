@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import user from ""
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const handleLogin = (e) => {
   }
 
   if (email && password) {
-
+    const user = JSON.parse(localStorage.getItem("user"));
     if (email === user.Email && password === user.Password){
       setloginsuccess("Login Successful")
   
