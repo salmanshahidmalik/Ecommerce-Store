@@ -27,7 +27,7 @@ function Register() {
       setFullnameError("Please Enter Your Name");
     } if (!PhoneNUM) {
       setPhoneNUMError("Please Enter Your Phone Number");
-    } if (!Cpassword) {
+    } if (!CPassword) {
       setCPasswordError("Please Enter Your Password Again.");
     }if (!Email) {
       setEmailError("Please Enter Your Email");
@@ -42,6 +42,13 @@ function Register() {
       CPassword &&
       Password === CPassword
     ) {
+      const user = {
+        "Fullname": "value from Fullname",
+        "PhoneNUM": "value from PhoneNUM",
+        "Email": "value from Email",
+        "Password": "value from Password"
+      }
+      localStorage.setItem("user", JSON.stringify(user));
       setloginsuccess("Registration Successful !!!");
     }
     
@@ -62,7 +69,7 @@ function Register() {
             Join ShopZone and start shopping smarter.
           </p>
 
-          <form className="space-y-4">
+          <form className="space-y-4"onSubmit={handleREG}>
             <div>
               <label className="label">
                 <span className="label-text">Full Name</span>
@@ -166,7 +173,7 @@ function Register() {
 
             </div>
 
-            <button type="submit" className="btn btn-primary w-full"onClick={handleREG}>
+            <button type="submit" className="btn btn-primary w-full">
               Create Account
             </button>
           </form>
