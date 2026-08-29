@@ -27,15 +27,24 @@ function Register() {
       setFullnameError("Please Enter Your Name");
     } if (!PhoneNUM) {
       setPhoneNUMError("Please Enter Your Phone Number");
-    } if (!CpasswordError) {
+    } if (!Cpassword) {
       setCPasswordError("Please Enter Your Password Again.");
     }if (!Email) {
       setEmailError("Please Enter Your Email");
     }if (!Password) {
       setPasswordError("Please Please Enter Your Password.");
-    }if (Email && Password && PhoneNUM && Fullname && CPassword   ) {
-      setloginsuccess("Registration Successful !!!")
     }
+    if (
+      Fullname &&
+      PhoneNUM &&
+      Email &&
+      Password &&
+      CPassword &&
+      Password === CPassword
+    ) {
+      setloginsuccess("Registration Successful !!!");
+    }
+    
   };
 
 
