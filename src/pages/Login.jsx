@@ -27,8 +27,8 @@ const handleLogin = (e) => {
       Email: email,
       Password: password
     }
-    localStorage.setItem("user", JSON.stringify(user))
-    setloginsuccess("Login Successful !!!")
+    localStorage.setItem("user", JSON.stringify(users))
+    setloginsuccess("Login Successful")
   }
 };
   return (
