@@ -139,14 +139,7 @@ function Register() {
                 type="password"
                 placeholder="Confirm password"
                 className="input input-bordered w-full"
-                value={CPassword}
-                onChange={(e) => setCPassword(e.target.value) }
-              />
-              {CpasswordError &&(
-                <p className="text-error text-sm mt-1">
-                  {CpasswordError}
-                </p>
-              )}
+/>
             </div>
 
             <button type="submit" className="btn btn-primary w-full"onClick={handleREG}>
