@@ -23,11 +23,7 @@ const handleLogin = (e) => {
   }
 
   if (email && password) {
-    const users = {
-      Email: email,
-      Password: password
-    }
-    localStorage.setItem("user", JSON.stringify(users))
+
     if (email === users.Email && password === users.Password){
       setloginsuccess("Login Successful")
   
