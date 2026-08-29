@@ -24,7 +24,7 @@ const handleLogin = (e) => {
 
   if (email && password) {
 
-    if (email === users.Email && password === users.Password){
+    if (email === user.Email && password === user.Password){
       setloginsuccess("Login Successful")
   
 
