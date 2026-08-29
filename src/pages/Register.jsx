@@ -126,7 +126,7 @@ function Register() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-full">
+            <button type="submit" className="btn btn-primary w-full"onClick={handleREG}>
               Create Account
             </button>
           </form>
