@@ -83,6 +83,11 @@ function Register() {
                 value={PhoneNUM}
                 onChange={(e) => setPhoneNUM(e.target.value)}
               />
+              {PhoneNUMError &&(
+                <p className="text-error text-sm mt-1">
+                  {PhoneNUMError}
+                </p>
+              )}
             </div>
 
 
