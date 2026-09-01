@@ -15,6 +15,23 @@ import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import Orders from "./pages/Orders";
 import NotFound from "./pages/NotFound";
+import Search from "./pages/Search";
+import Categories from "./pages/Categories";
+import Profile from "./pages/Profile";
+
+import BecomeSeller from "./pages/BecomeSeller";
+import SellerDashboard from "./pages/SellerDashboard";
+import SellerProducts from "./pages/SellerProducts";
+import AddProduct from "./pages/AddProduct";
+import SellerOrders from "./pages/SellerOrders";
+import Inventory from "./pages/Inventory";
+
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminUsers from "./pages/AdminUsers";
+import AdminSellers from "./pages/AdminSellers";
+import AdminProducts from "./pages/AdminProducts";
+import AdminOrders from "./pages/AdminOrders";
 
 function App() {
   return (
@@ -50,6 +67,23 @@ function App() {
         <Route path="/orders" element={<Orders />} />
 
         <Route path="*" element={<NotFound />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/profile" element={<Profile />} />
+
+        <Route path="/become-seller" element={<BecomeSeller />} />
+        <Route path="/seller" element={<SellerDashboard />} />
+        <Route path="/seller/products" element={<SellerProducts />} />
+        <Route path="/seller/products/add" element={<AddProduct />} />
+        <Route path="/seller/orders" element={<SellerOrders />} />
+        <Route path="/seller/inventory" element={<Inventory />} />
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
+        <Route path="/admin/sellers" element={<AdminSellers />} />
+        <Route path="/admin/products" element={<AdminProducts />} />
+        <Route path="/admin/orders" element={<AdminOrders />} />
 
       </Routes>
 
