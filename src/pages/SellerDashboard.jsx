@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 
 
-const login = useAuthStore((state) => state.login);
 function SellerDashboard() {
   return (
     <div className="max-w-7xl mx-auto p-6">
