@@ -26,12 +26,12 @@ import AddProduct from "./pages/AddProduct";
 import SellerOrders from "./pages/SellerOrders";
 import Inventory from "./pages/Inventory";
 
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
-import AdminUsers from "./pages/AdminUsers";
-import AdminSellers from "./pages/AdminSellers";
-import AdminProducts from "./pages/AdminProducts";
-import AdminOrders from "./pages/AdminOrders";
+import AdminLogin from "./pages/ADMIN/AdminLogin";
+import AdminDashboard from "./pages/ADMIN/AdminDashboard";
+import AdminUsers from "./pages/ADMIN/AdminUsers";
+import AdminSellers from "./pages/ADMIN/AdminSellers";
+import AdminProducts from "./pages/ADMIN/AdminProducts";
+import AdminOrders from "./pages/ADMIN/AdminOrders";
 
 function App() {
   return (
