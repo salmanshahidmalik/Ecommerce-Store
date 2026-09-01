@@ -18,7 +18,7 @@ import NotFound from "./pages/NotFound";
 import Search from "./pages/Search";
 import Categories from "./pages/Categories";
 import Profile from "./pages/Profile";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 import BecomeSeller from "./pages/BecomeSeller";
 import SellerDashboard from "./pages/SellerDashboard";
 import SellerProducts from "./pages/SellerProducts";
@@ -48,35 +48,35 @@ function App() {
         <Route
           path="/products/:id" element={<ProductDetails />} />
 
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>  } />
 
         <Route path="/orderconfirmation" element={<OrderConfirmation />} />
 
         <Route path="/login" element={<Login />} />
 
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
 
         <Route path="/register" element={<Register />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={<ProtectedRoute> <Checkout /> </ProtectedRoute>} />
 
-        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/order-confirmation" element={<ProtectedRoute><OrderConfirmation /></ProtectedRoute>} />
 
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
 
         <Route path="*" element={<NotFound />} />
         <Route path="/search" element={<Search />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
 
         <Route path="/become-seller" element={<BecomeSeller />} />
-        <Route path="/seller" element={<SellerDashboard />} />
+        <Route path="/seller" element={<ProtectedRoute><SellerDashboard /></ProtectedRoute>} />
         <Route path="/seller/products" element={<SellerProducts />} />
         <Route path="/seller/products/add" element={<AddProduct />} />
         <Route path="/seller/orders" element={<SellerOrders />} />
-        <Route path="/seller/inventory" element={<Inventory />} />
+        <Route path="/seller/inventory" element={<ProtectedRoute><Inventory /></ProtectedRoute>} />
 
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />

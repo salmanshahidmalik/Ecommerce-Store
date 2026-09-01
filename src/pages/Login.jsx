@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuthStore from "../store/authStore";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -7,6 +8,7 @@ function Login() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [loginsuccess, setloginsuccess] = useState("");
+  const login = useAuthStore((state) => state.login);
 
 const handleLogin = (e) => {
   e.preventDefault();
@@ -26,6 +28,8 @@ const handleLogin = (e) => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (email === user.Email && password === user.Password){
       setloginsuccess("Login Successful")
+      console.log("Logging you in message")
+      login();
     }
     else{
       setPasswordError("Wrong Credientials")
