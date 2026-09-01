@@ -2,133 +2,214 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-100 shadow-md px-4">
+    <nav className="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur">
 
-      {/* Logo */}
-      <div className="flex-1">
-        <Link to="/" className="text-2xl font-bold">
-          ShopZone
-        </Link>
-      </div>
+      <div className="navbar mx-auto max-w-7xl px-4 sm:px-6">
 
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center gap-2">
-
-        <Link to="/" className="btn btn-ghost">
-          Home
-        </Link>
-
-        <Link to="/products" className="btn btn-ghost">
-          Products
-        </Link>
-
-        <Link to="/categories" className="btn btn-ghost">
-          Categories
-        </Link>
-
-        <Link to="/search" className="btn btn-ghost">
-          🔍 Search
-        </Link>
-
-        <Link to="/wishlist" className="btn btn-ghost">
-          ❤️ Wishlist
-        </Link>
-
-        <Link to="/cart" className="btn btn-primary">
-          🛒 Cart
-        </Link>
-
-        {/* Account Dropdown */}
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost"
+        {/* Logo */}
+        <div className="flex-1">
+          <Link
+            to="/"
+            className="text-2xl font-extrabold tracking-tight text-primary sm:text-3xl"
           >
-            👤 Account ▾
+            ShopZone
+          </Link>
+        </div>
+
+        {/* Search */}
+        <div className="hidden md:flex">
+          <label className="input input-bordered flex w-64 items-center gap-2 rounded-full bg-base-200 lg:w-80">
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="h-5 w-5 opacity-60"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="grow bg-transparent"
+            />
+
+          </label>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-1 md:flex ml-4">
+
+          <Link
+            to="/products"
+            className="btn btn-ghost rounded-full hover:bg-primary/10 hover:text-primary"
+          >
+            Products
+          </Link>
+
+          <Link
+            to="/categories"
+            className="btn btn-ghost rounded-full hover:bg-primary/10 hover:text-primary"
+          >
+            Categories
+          </Link>
+
+          <Link
+            to="/wishlist"
+            className="btn btn-ghost rounded-full hover:bg-primary/10 hover:text-primary"
+          >
+            ❤️
+          </Link>
+
+          <Link
+            to="/orders"
+            className="btn btn-ghost rounded-full hover:bg-primary/10 hover:text-primary"
+          >
+            📦
+          </Link>
+
+          {/* Account */}
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost rounded-full hover:bg-primary/10 hover:text-primary"
+            >
+              👤 Account
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content z-50 mt-3 w-52 rounded-2xl border border-base-300 bg-base-100 p-2 shadow-xl"
+            >
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+
+              <li>
+                <Link to="/orders">My Orders</Link>
+              </li>
+
+              <li>
+                <Link to="/become-seller">
+                  Become a Seller
+                </Link>
+              </li>
+
+              <li>
+                <Link to="/login">
+                  Login
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-50 w-52 p-2 shadow"
+          {/* Cart */}
+          <Link
+            to="/cart"
+            className="btn btn-primary ml-1 rounded-full px-5 shadow-md hover:scale-105"
           >
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
+            🛒 Cart
+          </Link>
 
-            <li>
-              <Link to="/orders">My Orders</Link>
-            </li>
+        </div>
 
-            <li>
-              <Link to="/become-seller">
-                Become a Seller
-              </Link>
-            </li>
+        {/* Mobile */}
+        <div className="flex items-center gap-2 md:hidden">
 
-            <li>
-              <button>Logout</button>
-            </li>
-          </ul>
+          <Link
+            to="/cart"
+            className="btn btn-primary btn-sm rounded-full"
+          >
+            🛒
+          </Link>
+
+          <div className="dropdown dropdown-end">
+
+            <button
+              tabIndex={0}
+              className="btn btn-ghost btn-sm"
+            >
+              ☰
+            </button>
+
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content z-50 mt-3 w-56 rounded-2xl border border-base-300 bg-base-100 p-3 shadow-xl"
+            >
+
+              <li>
+                <Link to="/">🏠 Home</Link>
+              </li>
+
+              <li>
+                <Link to="/products">🛍️ Products</Link>
+              </li>
+
+              <li>
+                <Link to="/categories">📂 Categories</Link>
+              </li>
+
+              <li>
+                <Link to="/wishlist">❤️ Wishlist</Link>
+              </li>
+
+              <li>
+                <Link to="/orders">📦 Orders</Link>
+              </li>
+
+              <li>
+                <Link to="/profile">👤 Profile</Link>
+              </li>
+
+              <li>
+                <Link to="/become-seller">🏪 Become a Seller</Link>
+              </li>
+
+              <li>
+                <Link to="/login">🔐 Login</Link>
+              </li>
+
+            </ul>
+
+          </div>
+
         </div>
 
       </div>
 
-      {/* Mobile Menu */}
-      <div className="dropdown dropdown-end md:hidden">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost text-xl"
-        >
-          ☰
-        </div>
+      {/* Mobile Search */}
+      <div className="border-t border-base-200 px-4 py-3 md:hidden">
 
-        <ul
-          tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded-box z-50 w-56 p-2 shadow"
-        >
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+        <label className="input input-bordered flex w-full items-center gap-2 rounded-full bg-base-200">
 
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="h-5 w-5 opacity-60"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
 
-          <li>
-            <Link to="/categories">Categories</Link>
-          </li>
+          <input
+            type="text"
+            placeholder="Search products..."
+            className="grow bg-transparent"
+          />
 
-          <li>
-            <Link to="/search">Search</Link>
-          </li>
+        </label>
 
-          <li>
-            <Link to="/wishlist">Wishlist</Link>
-          </li>
-
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-
-          <li>
-            <Link to="/orders">My Orders</Link>
-          </li>
-
-          <li>
-            <Link to="/become-seller">
-              Become a Seller
-            </Link>
-          </li>
-        </ul>
       </div>
 
-    </div>
+    </nav>
   );
 }
 
