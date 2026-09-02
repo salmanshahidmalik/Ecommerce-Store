@@ -2,29 +2,29 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Navbar from './components/navbar'
 
-import Home from './pages/Home'
-import Products from './pages/Products'
-import ProductDetails from './pages/ProductDetails'
-import Cart from './pages/Cart'
-import Login from './pages/Login'
-import Wishlist from './pages/Wishlist'
-import Register from './pages/Register'
+import Home from './pages/Regular/Home'
+import Products from './pages/Regular/Products'
+import ProductDetails from './pages/Regular/ProductDetails'
+import Cart from './pages/Regular/Cart'
+import Login from './pages/Regular/Login'
+import Wishlist from './pages/Regular/Wishlist'
+import Register from './pages/Regular/Register'
 import Footer from './components/Footer'
-import ForgotPassword from "./pages/ForgotPassword";
-import Checkout from "./pages/Checkout";
-import OrderConfirmation from "./pages/OrderConfirmation";
-import Orders from "./pages/Orders";
-import NotFound from "./pages/NotFound";
-import Search from "./pages/Search";
-import Categories from "./pages/Categories";
-import Profile from "./pages/Profile";
+import ForgotPassword from "./pages/Regular/ForgotPassword";
+import Checkout from "./pages/Regular/Checkout";
+import OrderConfirmation from "./pages/Regular/OrderConfirmation";
+import Orders from "./pages/Regular/Orders";
+import NotFound from "./pages/Regular/NotFound";
+import Search from "./pages/Regular/Search";
+import Categories from "./pages/Regular/Categories";
+import Profile from "./pages/Regular/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import BecomeSeller from "./pages/SELLER/BecomeSeller";
 import SellerDashboard from "./pages/SELLER/SellerDashboard";
 import SellerProducts from "./pages/SELLER/SellerProducts";
-import AddProduct from "./pages/AddProduct";
+import AddProduct from "./pages/Regular/AddProduct";
 import SellerOrders from "./pages/SELLER/SellerOrders";
-import Inventory from "./pages/Inventory";
+import Inventory from "./pages/Regular/Inventory";
 
 import AdminLogin from "./pages/ADMIN/AdminLogin";
 import AdminDashboard from "./pages/ADMIN/AdminDashboard";
