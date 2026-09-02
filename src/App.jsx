@@ -19,11 +19,11 @@ import Search from "./pages/Search";
 import Categories from "./pages/Categories";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
-import BecomeSeller from "./pages/BecomeSeller";
-import SellerDashboard from "./pages/SellerDashboard";
-import SellerProducts from "./pages/SellerProducts";
+import BecomeSeller from "./pages/SELLER/BecomeSeller";
+import SellerDashboard from "./pages/SELLER/SellerDashboard";
+import SellerProducts from "./pages/SELLER/SellerProducts";
 import AddProduct from "./pages/AddProduct";
-import SellerOrders from "./pages/SellerOrders";
+import SellerOrders from "./pages/SELLER/SellerOrders";
 import Inventory from "./pages/Inventory";
 
 import AdminLogin from "./pages/ADMIN/AdminLogin";
