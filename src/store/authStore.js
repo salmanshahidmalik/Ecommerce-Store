@@ -6,6 +6,11 @@ const useAuthStore = create((set) => ({
     localStorage.setItem("isLoggedIn", "true");
     set({isLoggedIn: true})},
 
+  logout: () =>{
+    localStorage.removeItem("isLoggedIn");
+    set({isLoggedIn:false})
+  },
+
 }));
 
 

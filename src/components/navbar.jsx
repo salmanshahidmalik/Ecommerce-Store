@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import useAuthStore from "../store/authStore";
 
 function Navbar() {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+  const logout = useAuthStore((state) => state.logout);
+
   return (
     <nav className="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur">
-
       <div className="navbar mx-auto max-w-7xl px-4 sm:px-6">
 
         {/* Logo */}
@@ -19,7 +22,6 @@ function Navbar() {
         {/* Search */}
         <div className="hidden md:flex">
           <label className="input input-bordered flex w-64 items-center gap-2 rounded-full bg-base-200 lg:w-80">
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -37,7 +39,6 @@ function Navbar() {
               placeholder="Search products..."
               className="grow bg-transparent"
             />
-
           </label>
         </div>
 
@@ -100,11 +101,21 @@ function Navbar() {
                 </Link>
               </li>
 
-              <li>
-                <Link to="/login">
-                  Login
-                </Link>
-              </li>
+              {!isLoggedIn && (
+                <li>
+                  <Link to="/login">
+                    Login
+                  </Link>
+                </li>
+              )}
+
+              {isLoggedIn && (
+                <li>
+                  <button onClick={logout}>
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -115,7 +126,6 @@ function Navbar() {
           >
             🛒 Cart
           </Link>
-
         </div>
 
         {/* Mobile */}
@@ -129,7 +139,6 @@ function Navbar() {
           </Link>
 
           <div className="dropdown dropdown-end">
-
             <button
               tabIndex={0}
               className="btn btn-ghost btn-sm"
@@ -141,7 +150,6 @@ function Navbar() {
               tabIndex={0}
               className="menu dropdown-content z-50 mt-3 w-56 rounded-2xl border border-base-300 bg-base-100 p-3 shadow-xl"
             >
-
               <li>
                 <Link to="/">🏠 Home</Link>
               </li>
@@ -167,26 +175,34 @@ function Navbar() {
               </li>
 
               <li>
-                <Link to="/become-seller">🏪 Become a Seller</Link>
+                <Link to="/become-seller">
+                  🏪 Become a Seller
+                </Link>
               </li>
 
-              <li>
-                <Link to="/login">🔐 Login</Link>
-              </li>
+              {!isLoggedIn && (
+                <li>
+                  <Link to="/login">
+                    🔐 Login
+                  </Link>
+                </li>
+              )}
 
+              {isLoggedIn && (
+                <li>
+                  <button onClick={logout}>
+                    🚪 Logout
+                  </button>
+                </li>
+              )}
             </ul>
-
           </div>
-
         </div>
-
       </div>
 
       {/* Mobile Search */}
       <div className="border-t border-base-200 px-4 py-3 md:hidden">
-
         <label className="input input-bordered flex w-full items-center gap-2 rounded-full bg-base-200">
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -204,11 +220,8 @@ function Navbar() {
             placeholder="Search products..."
             className="grow bg-transparent"
           />
-
         </label>
-
       </div>
-
     </nav>
   );
 }
