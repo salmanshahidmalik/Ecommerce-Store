@@ -1,23 +1,50 @@
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
+import { useState,useEffect } from "react";
 
 function ProductDetails() {
   const { id } = useParams();
 
-  const product = products.find(
-    (product) => product.id === Number(id)
-  );
-
-  if (!product) {
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  
+  useEffect(() => {
+    fetch(`http://localhost:3000/products/${id}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Product not found");
+        }
+  
+        return res.json();
+      })
+      .then((data) => {
+        setProduct(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("Product not found");
+        setLoading(false);
+      });
+  }, [id]);
+  if (loading) {
+    return (
+      <div className="flex min-h-[400px] items-center justify-center">
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    );
+  }
+  
+  if (error) {
     return (
       <div className="mx-auto max-w-7xl p-10">
         <h1 className="text-3xl font-bold">
-          Product Not Found
+          {error}
         </h1>
       </div>
     );
   }
-
+ 
   return (
     <div className="mx-auto max-w-7xl p-6">
       <div className="grid gap-10 md:grid-cols-2">

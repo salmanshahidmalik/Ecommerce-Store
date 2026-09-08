@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useAuthStore from "../store/authStore";
 
 function Navbar() {
+  
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const logout = useAuthStore((state) => state.logout);
 
