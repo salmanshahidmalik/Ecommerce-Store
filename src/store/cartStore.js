@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import cartStore from "../store/cartStore";
 
 const cartStore = create((set) => ({
   cart: [],

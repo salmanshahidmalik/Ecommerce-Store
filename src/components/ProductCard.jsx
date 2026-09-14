@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-
+import cartStore from "../store/cartStore";
 function ProductCard({ product }) {
   const addToCart = cartStore((state) => state.addToCart);
   return (
