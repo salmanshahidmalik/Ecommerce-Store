@@ -1,183 +1,133 @@
 import { Link } from "react-router-dom";
-import products from "../../data/products";
+import cartStore from "../../store/cartStore";
 
 function Cart() {
+  const cart = cartStore((state) => state.cart);
+  const increaseQuantity = cartStore((state) => state.increaseQuantity);
+  const decreaseQuantity = cartStore((state) => state.decreaseQuantity);
+  const removeFromCart = cartStore((state) => state.removeFromCart);
 
-  const cartItems = products.slice(0, 2);
-
-
-  const subtotal = cartItems.reduce(
-    (total, product) => total + product.price,
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
     0
   );
 
-  const shipping = 10;
+  if (cart.length === 0) {
+    return (
+      <div className="mx-auto max-w-7xl p-6 text-center">
+        <h1 className="mb-4 text-3xl font-bold">Your Cart</h1>
+        <p className="mb-6 text-base-content/60">
+          Your cart is empty.
+        </p>
 
-  const total = subtotal + shipping;
-
+        <Link to="/products" className="btn btn-primary">
+          Continue Shopping
+        </Link>
+      </div>
+    );
+  }
 
   return (
+    <div className="mx-auto max-w-7xl p-6">
+      <h1 className="mb-6 text-3xl font-bold">Your Cart</h1>
 
-    <div className="mx-auto max-w-7xl px-6 py-12">
-
-      <h1 className="text-4xl font-bold">
-        Shopping Cart
-      </h1>
-
-      <p className="mt-2 text-base-content/60">
-        Review your items before checkout.
-      </p>
-
-
-      <div className="mt-10 grid gap-8 lg:grid-cols-3">
-
+      <div className="grid gap-6 lg:grid-cols-3">
 
         {/* Cart Items */}
         <div className="space-y-4 lg:col-span-2">
-
-          {cartItems.map((product) => (
-
+          {cart.map((item) => (
             <div
-              key={product.id}
+              key={item.id}
               className="card bg-base-100 shadow-md"
             >
+              <div className="card-body flex-row items-center gap-4">
 
-              <div className="card-body">
+                <img
+                  src={item.images?.[0]}
+                  alt={item.name}
+                  className="h-24 w-24 object-contain"
+                />
 
-                <div className="flex flex-col gap-6 sm:flex-row">
+                <div className="flex-1">
+                  <h2 className="text-lg font-bold">
+                    {item.name}
+                  </h2>
 
+                  <p className="text-primary font-semibold">
+                    ${item.price.toFixed(2)}
+                  </p>
 
-                  {/* Image */}
-                  <div className="rounded-lg bg-base-200 p-4">
-
-                    <img
-                      src={product.images[0]}
-                      alt={product.name}
-                      className="h-32 w-32 object-contain"
-                    />
-
-                  </div>
-
-
-                  {/* Info */}
-                  <div className="flex-1">
-
-                    <Link
-                      to={`/products/${product.id}`}
-                      className="text-xl font-bold hover:text-primary"
+                  <div className="mt-3 flex items-center gap-2">
+                    <button
+                      onClick={() => decreaseQuantity(item.id)}
+                      className="btn btn-sm btn-outline"
                     >
-                      {product.name}
-                    </Link>
-
-                    <p className="mt-2 text-sm text-base-content/60">
-                      {product.category}
-                    </p>
-
-                    <p className="mt-3 text-xl font-bold">
-                      ${product.price}
-                    </p>
-
-
-                    {/* Quantity */}
-                    <div className="mt-4 flex items-center gap-3">
-
-                      <span>
-                        Quantity:
-                      </span>
-
-                      <select
-                        className="select select-bordered select-sm"
-                        defaultValue="1"
-                      >
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                      </select>
-
-                    </div>
-
-                  </div>
-
-
-                  {/* Remove */}
-                  <div>
-
-                    <button className="btn btn-ghost btn-sm text-error">
-                      Remove
+                      −
                     </button>
 
-                  </div>
+                    <span className="min-w-8 text-center font-semibold">
+                      {item.quantity}
+                    </span>
 
+                    <button
+                      onClick={() => increaseQuantity(item.id)}
+                      className="btn btn-sm btn-outline"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
 
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="btn btn-sm btn-error btn-outline"
+                >
+                  Remove
+                </button>
+
               </div>
-
             </div>
-
           ))}
-
         </div>
 
-
         {/* Summary */}
-        <div>
+        <div className="card h-fit bg-base-100 shadow-md">
+          <div className="card-body">
 
-          <div className="card bg-base-200 shadow-md">
+            <h2 className="card-title">
+              Order Summary
+            </h2>
 
-            <div className="card-body">
+            <div className="divider my-1"></div>
 
-              <h2 className="card-title">
-                Order Summary
-              </h2>
-
-
-              <div className="mt-4 flex justify-between">
-                <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
-              </div>
-
-
-              <div className="flex justify-between">
-                <span>Shipping</span>
-                <span>${shipping.toFixed(2)}</span>
-              </div>
-
-
-              <div className="divider"></div>
-
-
-              <div className="flex justify-between text-xl font-bold">
-                <span>Total</span>
-                <span>${total.toFixed(2)}</span>
-              </div>
-
-
-              <Link
-                to="/checkout"
-                className="btn btn-primary mt-6 w-full"
-              >
-                Proceed to Checkout
-              </Link>
-
-
-              <Link
-                to="/products"
-                className="btn btn-outline mt-2 w-full"
-              >
-                Continue Shopping
-              </Link>
-
+            <div className="flex justify-between">
+              <span>Items</span>
+              <span>
+                {cart.reduce(
+                  (sum, item) => sum + item.quantity,
+                  0
+                )}
+              </span>
             </div>
 
-          </div>
+            <div className="mt-2 flex justify-between text-lg font-bold">
+              <span>Total</span>
+              <span>${total.toFixed(2)}</span>
+            </div>
 
+            <Link
+              to="/checkout"
+              className="btn btn-primary mt-4 w-full"
+            >
+              Proceed to Checkout
+            </Link>
+
+          </div>
         </div>
 
       </div>
-
     </div>
   );
 }
 
-export default Cart;
+export default Cart;  

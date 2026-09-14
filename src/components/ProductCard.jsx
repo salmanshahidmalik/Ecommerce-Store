@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 
 function ProductCard({ product }) {
+  const addToCart = cartStore((state) => state.addToCart);
   return (
     <div className="card bg-base-100 shadow-md">
 
@@ -35,9 +36,10 @@ function ProductCard({ product }) {
         </p>
 
         <div className="card-actions mt-4">
-          <button className="btn btn-primary w-full bg-gray-900 hover:bg-amber-600">
-            Add to Cart
-          </button>
+        <button onClick={() => addToCart(product)}
+  className="btn btn-primary w-full">
+  Add to Cart
+</button>
 
           <button className="btn btn-primary w-full bg-gray-900 hover:bg-red-600">
             Buy Now
